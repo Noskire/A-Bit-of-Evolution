@@ -1,0 +1,27 @@
+keys,en,pt
+TITLE,A Bit of Evolution,Um Bit de Evolução
+NEWGAME,New Game,Novo Jogo
+SETTINGS,Settings,Opções
+CREATOR,Creator: Noskire,Criador: Noskire
+MUSIC,Music by: Nihilore\nhttp://www.nihilore.com/,Musica de: Nihilore\nhttp://www.nihilore.com/
+STOPTIONS,Options,Opções
+STDISPLAYMODE,Display Mode,Modo de Exibição
+STWINDOWED,Windowed,Modo Janela
+STFULLSCREEN,FullScreen,Tela Cheia
+STBLOOM,Bloom,Bloom
+STVSYNC,VSync,VSync
+STBRIGHTNESS,Brightness,Brilho
+STLANGUAGE,Language,Idioma
+STLCHOOSE,Choose a Language,Escolha um Idioma
+STMUSIC,Master Volume,Volume Principal
+STKEYS,Keybind,Controles
+STRESET,Reset Settings,Redefinir Teclas
+STSAVE,Save Settings,Salvar Teclas
+MoveLeft,Left,Esquerda
+MoveRight,Right,Direita
+Jump,Jump,Pular
+Crouch,Crouch,Agachar
+Attack,Attack,Atacar
+Dash,Dash,Disparada
+STKUNASSIGNED,Unassigned,Sem Tecla
+STKPRESSKEY,Press Any Key:,Aperte uma Tecla:

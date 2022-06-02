@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Watashi_Nihilore.mp3-f17331b1ae39c628a4f079fe1537a6a6.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Watashi_Nihilore.mp3"
+dest_files=[ "res://.import/Watashi_Nihilore.mp3-f17331b1ae39c628a4f079fe1537a6a6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

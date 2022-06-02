@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Attack_Effect.png-f0e541db738a3ea4ceae6e47d5095a03.stex"
+path="res://.import/GallonSteelDrum.png-df07cd98db565170d7aaedd3bcbc2d41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/Attack_Effect.png"
-dest_files=[ "res://.import/Attack_Effect.png-f0e541db738a3ea4ceae6e47d5095a03.stex" ]
+source_file="res://assets/Images/GallonSteelDrum.png"
+dest_files=[ "res://.import/GallonSteelDrum.png-df07cd98db565170d7aaedd3bcbc2d41.stex" ]
 
 [params]
 

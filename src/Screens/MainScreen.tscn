@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/theme_menu.tres" type="Theme" id=1]
+[ext_resource path="res://assets/dynamicfont_title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/Screens/MainScreen.gd" type="Script" id=3]
+[ext_resource path="res://src/UserInterface/SettingsMenu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[node name="MainScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+nextScenePath = "res://src/Levels/Level2.tscn"
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.160784, 0.231373, 0.286275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -339.0
+margin_top = 99.8934
+margin_right = 339.0
+margin_bottom = 484.893
+theme = SubResource( 1 )
+text = "TITLE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -69.134
+margin_right = 225.0
+margin_bottom = 230.866
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="Menu"]
+margin_right = 450.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "NEWGAME"
+
+[node name="SettingsButton" type="Button" parent="Menu"]
+margin_top = 151.0
+margin_right = 450.0
+margin_bottom = 299.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SETTINGS"
+
+[node name="Creator" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -127.0
+margin_right = 389.0
+margin_bottom = -50.0
+text = "CREATOR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -560.0
+margin_top = -207.0
+margin_right = -50.0
+margin_bottom = -50.0
+text = "MUSIC"
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -480.0
+margin_top = -370.0
+margin_right = 480.0
+margin_bottom = 370.0
+
+[connection signal="button_up" from="Menu/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="Menu/SettingsButton" to="." method="_on_SettingsButton_button_up"]
