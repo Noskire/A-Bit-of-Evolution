@@ -85,11 +85,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -560.0
+margin_left = -660.0
 margin_top = -207.0
-margin_right = -50.0
+margin_right = 457.0
 margin_bottom = -50.0
 text = "MUSIC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -99,7 +102,7 @@ anchor_bottom = 0.5
 margin_left = -480.0
 margin_top = -370.0
 margin_right = 480.0
-margin_bottom = 370.0
+margin_bottom = 390.0
 
 [connection signal="button_up" from="Menu/PlayButton" to="." method="_on_PlayButton_button_up"]
 [connection signal="button_up" from="Menu/SettingsButton" to="." method="_on_SettingsButton_button_up"]

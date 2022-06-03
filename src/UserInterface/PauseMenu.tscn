@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/theme_menu.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/PauseMenu.gd" type="Script" id=2]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.160784, 0.231373, 0.286275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Paused" type="Label" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.0
+margin_top = 133.191
+margin_right = 89.0
+margin_bottom = 210.191
+text = "PAUSED"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -129.863
+margin_right = 225.0
+margin_bottom = 320.137
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeBtn" type="Button" parent="PauseOverlay/VBox"]
+margin_right = 450.0
+margin_bottom = 147.0
+size_flags_vertical = 3
+text = "RESUME"
+
+[node name="RestartBtn" type="Button" parent="PauseOverlay/VBox"]
+margin_top = 151.0
+margin_right = 450.0
+margin_bottom = 298.0
+size_flags_vertical = 3
+text = "RESTART"
+
+[node name="MainMenuBtn" type="Button" parent="PauseOverlay/VBox"]
+margin_top = 302.0
+margin_right = 450.0
+margin_bottom = 450.0
+size_flags_vertical = 3
+text = "MAINMENU"
+
+[connection signal="button_up" from="PauseOverlay/VBox/ResumeBtn" to="." method="_on_ResumeBtn_button_up"]
+[connection signal="button_up" from="PauseOverlay/VBox/RestartBtn" to="." method="_on_RestartBtn_button_up"]
+[connection signal="button_up" from="PauseOverlay/VBox/MainMenuBtn" to="." method="_on_MainMenuBtn_button_up"]

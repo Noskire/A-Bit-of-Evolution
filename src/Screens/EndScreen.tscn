@@ -1,0 +1,236 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme_menu.tres" type="Theme" id=1]
+[ext_resource path="res://src/Screens/EndScreen.gd" type="Script" id=2]
+[ext_resource path="res://src/Screens/HTTPReq.gd" type="Script" id=3]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+level_path = "res://src/Levels/Level2.tscn"
+screen_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.160784, 0.231373, 0.286275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -419.0
+margin_top = 58.7329
+margin_right = 419.0
+margin_bottom = 135.733
+text = "CONGRATS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -297.0
+margin_top = -326.825
+margin_right = 297.0
+margin_bottom = -249.825
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnterBoard" type="Control" parent="."]
+margin_right = 600.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="EnterBoard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="EnterBoard/Margin"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 575.0
+margin_bottom = 515.0
+custom_constants/separation = 50
+
+[node name="PutName" type="Label" parent="EnterBoard/Margin/VBox"]
+margin_right = 550.0
+margin_bottom = 77.0
+text = "PUTNAME"
+align = 1
+
+[node name="PlayerName" type="LineEdit" parent="EnterBoard/Margin/VBox"]
+margin_top = 127.0
+margin_right = 550.0
+margin_bottom = 214.0
+align = 1
+max_length = 12
+clear_button_enabled = true
+
+[node name="SendScore" type="Button" parent="EnterBoard/Margin/VBox"]
+margin_top = 264.0
+margin_right = 550.0
+margin_bottom = 341.0
+disabled = true
+text = "SENDSCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Label" parent="EnterBoard/Margin"]
+visible = false
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 575.0
+margin_bottom = 515.0
+size_flags_vertical = 5
+text = "SUBMITTING"
+align = 1
+
+[node name="YourRank" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -540.0
+margin_right = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="YourRank"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Label" parent="YourRank/Margin"]
+visible = false
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 575.0
+margin_bottom = 515.0
+size_flags_vertical = 5
+text = "GETRANK"
+align = 1
+
+[node name="Grid" type="GridContainer" parent="YourRank/Margin"]
+visible = false
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 575.0
+margin_bottom = 515.0
+columns = 2
+
+[node name="HighScore" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -600.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="HighScore"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top10" type="GridContainer" parent="HighScore/Margin"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 575.0
+margin_bottom = 1055.0
+columns = 2
+
+[node name="Loading" type="Label" parent="HighScore/Margin"]
+visible = false
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 575.0
+margin_bottom = 1055.0
+size_flags_vertical = 5
+text = "GETBOARD"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = 74.253
+margin_right = 225.0
+margin_bottom = 374.253
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartBtn" type="Button" parent="VBoxContainer"]
+margin_right = 450.0
+margin_bottom = 148.0
+size_flags_vertical = 3
+text = "RESTART"
+
+[node name="MainMenuBtn" type="Button" parent="VBoxContainer"]
+margin_top = 152.0
+margin_right = 450.0
+margin_bottom = 300.0
+size_flags_vertical = 3
+text = "MAINMENU"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+margin_left = 625.0
+margin_right = 628.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -630.0
+margin_right = -627.0
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="text_changed" from="EnterBoard/Margin/VBox/PlayerName" to="CanvasLayer" method="_on_PlayerName_text_changed"]
+[connection signal="button_up" from="EnterBoard/Margin/VBox/SendScore" to="CanvasLayer" method="_on_SendScore_button_up"]
+[connection signal="button_up" from="VBoxContainer/RestartBtn" to="." method="_on_RestartBtn_button_up"]
+[connection signal="button_up" from="VBoxContainer/MainMenuBtn" to="." method="_on_MainMenuBtn_button_up"]
+[connection signal="request_completed" from="CanvasLayer/HTTPRequest" to="CanvasLayer" method="_on_request_completed"]

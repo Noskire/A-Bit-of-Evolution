@@ -19,6 +19,7 @@ func _ready():
 	displayOptionBtn.select(1 if Save.game_data.fullscreen_on else 0)
 	GlobalSettings.toggle_fullscreen(Save.game_data.fullscreen_on)
 	bloomBtn.pressed = Save.game_data.bloom_on
+	vsyncBtn.pressed = Save.game_data.vsync_on
 	brightSlider.value = Save.game_data.brightness
 	
 	masterSlider.value = Save.game_data.master_vol

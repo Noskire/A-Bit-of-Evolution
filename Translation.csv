@@ -3,7 +3,7 @@ TITLE,A Bit of Evolution,Um Bit de Evolução
 NEWGAME,New Game,Novo Jogo
 SETTINGS,Settings,Opções
 CREATOR,Creator: Noskire,Criador: Noskire
-MUSIC,Music by: Nihilore\nhttp://www.nihilore.com/,Musica de: Nihilore\nhttp://www.nihilore.com/
+MUSIC,Music 'Watashi' by: Nihilore\nhttp://www.nihilore.com/,Musica 'Watashi' de: Nihilore\nhttp://www.nihilore.com/
 STOPTIONS,Options,Opções
 STDISPLAYMODE,Display Mode,Modo de Exibição
 STWINDOWED,Windowed,Modo Janela
@@ -23,5 +23,29 @@ Jump,Jump,Pular
 Crouch,Crouch,Agachar
 Attack,Attack,Atacar
 Dash,Dash,Disparada
+Pause,Pause,Pausar
 STKUNASSIGNED,Unassigned,Sem Tecla
 STKPRESSKEY,Press Any Key:,Aperte uma Tecla:
+TOUPGRADE,Parts to Upgrade: ,Peças para Atualizar: 
+PAUSED,Paused,Pausado
+RESUME,Resume,Retomar
+RESTART,Restart,Reiniciar
+MAINMENU,Main Menu,Menu Principal
+UPGRADE0,Now you can move to the Right,Agora você pode se mover para a direita
+UPGRADE1,Now you can move to the Left,Agora você pode se mover para a esquerda
+UPGRADE2,Now you can Jump,Agora você pode pular
+UPGRADE3,Now you can move faster,Agora você pode se mover mais rápido
+UPGRADE4,Now you can Crouch,Agora você pode agachar
+UPGRADE5,Now you can Dash,Agora você pode disparar
+UPGRADE6,Now you can Attack,Agora você pode atacar
+UPGRADE7,Now you can DoubleJump,Agora você pode dar dois pulos
+UPGRADE8,Now you can finally Rest,Agora você pode finalmente Descansar
+CONGRATS,Congratulations!\nYou finished the game!,Parabéns!\nVocê terminou o jogo!
+TIME,Time:,Tempo:
+NEWHIGHSCORE,(New Highscore),(Novo Recorde)
+PUTNAME,"To enter in the Leaderboard\nplease, type your name:","Para entrar no Ranking\npor favor, digite seu nome:"
+SENDSCORE,Send Best Time,Enviar melhor tempo
+SUBMITTING,Submitting...,Enviando...
+GETRANK,Getting your\nposition...,Obtendo sua\nposição...
+POSITION,Your Position:,Sua posição:
+GETBOARD,Getting the\nLeaderboard...,Obtendo o\nRanking...

@@ -1,12 +1,16 @@
 extends KinematicBody2D
 
+onready var sceneTree: = get_tree()
 onready var sprite: Sprite = get_node("Sprite")
 onready var partsInfo: Label = get_node("CanvasLayer/PartsInfo")
+onready var upgradeInfo: Label = get_node("CanvasLayer/UpgradeInfo")
+onready var upgradeTimer: Timer = get_node("UpgradeTimer")
 onready var animPlayer: AnimationPlayer = get_node("AnimationPlayer")
 onready var tween: Tween = get_node("Tween")
 
-const FLOOR_NORMAL: = Vector2.UP
+export(String, FILE) var nextScenePath: = ""
 
+const FLOOR_NORMAL: = Vector2.UP
 export var speed: = Vector2(150.0, 600.0)
 export var normal_speed: = 150.0
 export var dash_speed: = 600.0
@@ -16,6 +20,7 @@ var _velocity: = Vector2.ZERO
 var doubleJump = true
 var wakingUp = true
 var getting_hit = false
+var currentTime
 
 enum STATES {IDLE, MOVING, JUMPING, ATTACKING, DASHING, CROUCHING}
 var state = STATES.IDLE
@@ -23,21 +28,23 @@ var crouched = false
 
 # Upgrades
 var upgrades = {"MoveRight": false, "MoveLeft": false, "Jump": false, "MoveSpeed": false, "Crouch": false,
-				"Dash": false, "Attack": false, "DoubleJump": false, "Up9": false, "Up10": false}
+				"Dash": false, "Attack": false, "DoubleJump": false}
 
 # TO TEST ONLY #
 var upgrades2 = {"MoveRight": true, "MoveLeft": true, "Jump": true, "MoveSpeed": true, "Crouch": true,
-				"Dash": true, "Attack": true, "DoubleJump": true, "Up9": true, "Up10": true}
+				"Dash": true, "Attack": true, "DoubleJump": true}
 # TO TEST ONLY #
 
-var partsNeeded = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
+var partsNeeded = [1, 2, 3, 5, 7, 11, 13, 17, 1, 0]
 var upgradesUnlockeds = 0
 var partsCollected = 0
 
 func _ready():
 	partsInfo.set_text(str(tr("TOUPGRADE"), partsCollected, " / ", partsNeeded[upgradesUnlockeds]))
+	currentTime = 0
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	currentTime += delta
 	if not getting_hit and not wakingUp:
 		var direction: = get_direction()
 		var is_jump_interrupted: = Input.is_action_just_released("Jump") and _velocity.y < 0.0
@@ -76,6 +83,15 @@ func _input(event):
 	if not getting_hit and not wakingUp:
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed and upgrades.Attack:
+				if not crouched:
+					if animPlayer.current_animation != "Attack":
+						animPlayer.play("Attack")
+						state = STATES.ATTACKING
+				else:
+					if animPlayer.current_animation != "CAttack":
+						animPlayer.play("CAttack")
+						state = STATES.ATTACKING
+		if Input.is_action_just_pressed("Attack") and upgrades.Attack:
 				if not crouched:
 					if animPlayer.current_animation != "Attack":
 						animPlayer.play("Attack")
@@ -160,36 +176,36 @@ func picked() -> void:
 			0:
 				upgrades.MoveRight = true
 				animPlayer.play("Waking")
-				print("Now you can move to the Right")
+				upgradeInfo.set_text(str(tr("UPGRADE0"), " (", OS.get_scancode_string(Save.keybinds.MoveRight), ")"))
 			1:
 				upgrades.MoveLeft = true
-				print("Now you can move to the Left")
+				upgradeInfo.set_text(str(tr("UPGRADE1"), " (", OS.get_scancode_string(Save.keybinds.MoveLeft), ")"))
 			2:
 				upgrades.Jump = true
-				print("Now you can Jump")
+				upgradeInfo.set_text(str(tr("UPGRADE2"), " (", OS.get_scancode_string(Save.keybinds.Jump), ")"))
 			3:
 				upgrades.MoveSpeed = true
 				normal_speed = normal_speed * 2
 				speed.x = normal_speed
-				print("Now you can move faster")
+				upgradeInfo.set_text(tr("UPGRADE3"))
 			4:
 				upgrades.Crouch = true
-				print("Now you can Crouch")
+				upgradeInfo.set_text(str(tr("UPGRADE4"), " (", OS.get_scancode_string(Save.keybinds.Crouch), ")"))
 			5:
 				upgrades.Dash = true
-				print("Now you can Dash")
+				upgradeInfo.set_text(str(tr("UPGRADE5"), " (", OS.get_scancode_string(Save.keybinds.Dash), ")"))
 			6:
 				upgrades.Attack = true
-				print("Now you can Attack")
+				upgradeInfo.set_text(str(tr("UPGRADE6"), " (LMB/", OS.get_scancode_string(Save.keybinds.Attack), ")"))
 			7:
 				upgrades.DoubleJump = true
-				print("Now you can DoubleJump")
+				upgradeInfo.set_text(tr("UPGRADE7"))
 			8:
-				upgrades.Up9 = true
-				print("Now you can Up9")
-			9:
-				upgrades.Up10 = true
-				print("Now you can Up10")
+				wakingUp = true
+				animPlayer.play("Sleeping")
+				upgradeInfo.set_text(tr("UPGRADE8"))
+		upgradeInfo.set_visible(true)
+		upgradeTimer.start()
 		partsCollected -= partsNeeded[upgradesUnlockeds]
 		upgradesUnlockeds += 1
 	partsInfo.set_text(str(tr("TOUPGRADE"), partsCollected, " / ", partsNeeded[upgradesUnlockeds]))
@@ -218,10 +234,9 @@ func _on_animation_finished(anim_name):
 		state = STATES.IDLE
 		if anim_name == "CDash":
 			speed.x = normal_speed
-		
-	#Moving_wj Idle_wj Sleep Waking
-	#Attack Crouch Dash Idle Jump Moving
-	#CAttack CDash CIdle CJump CMoving Stood
+	elif anim_name == "Sleeping":
+		$CanvasLayer/CanvasModulate.get_darker()
+		$EndTimer.start()
 
 func _on_AttackArea_body_entered(body):
 	body.get_destroyed()
@@ -231,3 +246,16 @@ func _on_CAttackArea_body_entered(body):
 
 func _on_tween_completed(_object, _key):
 	getting_hit = false
+
+func _on_EndTimer_timeout():
+	var savedTime = Save.game_data.time_score
+	if savedTime == -1 or savedTime > currentTime:
+		Save.game_data.time_score = currentTime
+		Save.save_data()
+	var err
+	err = sceneTree.change_scene(nextScenePath)
+	if err != OK:
+		print("Error change_scene EndTimer")
+
+func _on_UpgradeTimer_timeout():
+	upgradeInfo.set_visible(false)

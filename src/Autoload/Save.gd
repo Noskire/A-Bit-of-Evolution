@@ -9,7 +9,8 @@ var standard_keybinds = {
 	"Jump": 32,
 	"Crouch": 16777238,
 	"Attack": 87,
-	"Dash": 16777237
+	"Dash": 16777237,
+	"Pause": 80
 }
 
 var game_data = {}
@@ -29,7 +30,9 @@ func load_data():
 			"vsync_on": true,
 			"brightness": 1,
 			"master_vol": -10,
-			"language": "en"
+			"language": "en",
+			"time_score": -1,
+			"best_time_score": -1
 		}
 		save_data()
 	file.open(SAVEFILE, File.READ)
