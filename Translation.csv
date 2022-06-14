@@ -31,15 +31,15 @@ PAUSED,Paused,Pausado
 RESUME,Resume,Retomar
 RESTART,Restart,Reiniciar
 MAINMENU,Main Menu,Menu Principal
-UPGRADE0,Now you can move to the Right,Agora você pode se mover para a direita
-UPGRADE1,Now you can move to the Left,Agora você pode se mover para a esquerda
-UPGRADE2,Now you can Jump,Agora você pode pular
-UPGRADE3,Now you can move faster,Agora você pode se mover mais rápido
-UPGRADE4,Now you can Crouch,Agora você pode agachar
-UPGRADE5,Now you can Dash,Agora você pode disparar
-UPGRADE6,Now you can Attack,Agora você pode atacar
-UPGRADE7,Now you can DoubleJump,Agora você pode dar dois pulos
-UPGRADE8,Now you can finally Rest,Agora você pode finalmente Descansar
+UPGRADE0,Now you can\nmove to the Right,Agora você pode se\nmover para a direita
+UPGRADE1,Now you can\nmove to the Left,Agora você pode se\nmover para a esquerda
+UPGRADE2,Now you can\nJump,Agora você pode\npular
+UPGRADE3,Now you can\nmove faster,Agora você pode se\nmover mais rápido
+UPGRADE4,Now you can\nCrouch,Agora você pode\nagachar
+UPGRADE5,Now you can\nDash,Agora você pode\ndisparar
+UPGRADE6,Now you can\nAttack,Agora você pode\natacar
+UPGRADE7,Now you can\nDoubleJump,Agora você pode\ndar dois pulos
+UPGRADE8,Now you can\nfinally Rest,Agora você pode\nfinalmente Descansar
 CONGRATS,Congratulations!\nYou finished the game!,Parabéns!\nVocê terminou o jogo!
 TIME,Time:,Tempo:
 NEWHIGHSCORE,(New Highscore),(Novo Recorde)

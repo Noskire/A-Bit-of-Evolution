@@ -87,11 +87,13 @@ func _on_VSyncBtn_toggled(button_pressed):
 
 func _on_BgtSlider_value_changed(value):
 	GlobalSettings.update_brightness(value)
-	brightValue.text = str(Save.game_data.brightness)
+	var v = int(1 + 66 * (Save.game_data.brightness - 0.5))
+	brightValue.text = str(v)
 
 func _on_VolSlider_value_changed(value):
 	GlobalSettings.update_vol(value)
-	masterValue.text = str(Save.game_data.master_vol)
+	var v = int((50 + Save.game_data.master_vol) * 2)
+	masterValue.text = str(v)
 
 func _on_Languages_item_selected(index):
 	if index == 1:

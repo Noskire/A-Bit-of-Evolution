@@ -64,7 +64,7 @@ text = "RESTART"
 [node name="MainMenuBtn" type="Button" parent="PauseOverlay/VBox"]
 margin_top = 302.0
 margin_right = 450.0
-margin_bottom = 450.0
+margin_bottom = 449.0
 size_flags_vertical = 3
 text = "MAINMENU"
 

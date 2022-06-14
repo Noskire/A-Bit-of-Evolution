@@ -1,30 +1,24 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/Images/RobotV2.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/dynamicfont_black.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/theme_label.tres" type="Theme" id=3]
 [ext_resource path="res://src/UserInterface/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/CanvasModulate.gd" type="Script" id=5]
 
-[sub_resource type="Theme" id=1]
-default_font = ExtResource( 3 )
-
-[sub_resource type="Theme" id=2]
-default_font = ExtResource( 3 )
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.64019, 6.62721 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6.66439, 4.74453 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 25.9442 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 10, 15.8493 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -87,7 +81,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -150,7 +144,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -213,7 +207,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -276,7 +270,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -339,7 +333,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -403,7 +397,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -466,7 +460,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -529,7 +523,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -592,7 +586,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -631,7 +625,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -644,70 +638,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 14, 15, 7 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionHigh:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionCrouch:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite/AttackArea/Collision:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite/CAttackArea/Collision:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=18]
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 7, 8, 9, 10 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionHigh:disabled")
@@ -771,6 +701,70 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
+"values": [ 7, 8, 9, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionHigh:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionCrouch:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite/AttackArea/Collision:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite/CAttackArea/Collision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
 "values": [ 3, 4, 5, 6 ]
 }
 tracks/1/type = "value"
@@ -798,7 +792,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -837,8 +831,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=21]
-resource_name = "Sleeping"
+[sub_resource type="Animation" id=22]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -876,7 +869,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=23]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -939,7 +932,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=24]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -988,11 +981,11 @@ pause_mode = 2
 [node name="PartsInfo" type="Label" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -447.129
+margin_left = -535.853
 margin_top = 135.0
-margin_right = -175.129
-margin_bottom = 179.0
-theme = SubResource( 1 )
+margin_right = -161.853
+margin_bottom = 201.0
+theme = ExtResource( 3 )
 text = "TOUPGRADE 0 / 1"
 align = 2
 __meta__ = {
@@ -1004,10 +997,10 @@ visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -186.0
-margin_top = 135.0
+margin_top = 135.918
 margin_right = 186.0
-margin_bottom = 179.0
-theme = SubResource( 2 )
+margin_bottom = 201.918
+theme = ExtResource( 3 )
 text = "UPGRADE1"
 align = 1
 __meta__ = {
@@ -1032,7 +1025,7 @@ collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Sprite/AttackArea"]
 position = Vector2( 14.0588, -28.0532 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="CAttackArea" type="Area2D" parent="Sprite"]
@@ -1042,16 +1035,16 @@ collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Sprite/CAttackArea"]
 position = Vector2( 14.143, -17.1258 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="CollisionHigh" type="CollisionShape2D" parent="."]
 position = Vector2( -0.561234, -25.536 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionCrouch" type="CollisionShape2D" parent="."]
 position = Vector2( -0.946007, -15.8719 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1070,23 +1063,23 @@ drag_margin_bottom = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Sleep"
-anims/Attack = SubResource( 7 )
-anims/CAttack = SubResource( 8 )
-anims/CDash = SubResource( 9 )
-anims/CIdle = SubResource( 10 )
-anims/CJump = SubResource( 11 )
-anims/CMoving = SubResource( 12 )
-anims/Crouch = SubResource( 13 )
-anims/Dash = SubResource( 14 )
-anims/Idle = SubResource( 15 )
-anims/Idle_wj = SubResource( 16 )
-anims/Jump = SubResource( 17 )
-anims/Moving = SubResource( 18 )
-anims/Moving_wj = SubResource( 19 )
-anims/Sleep = SubResource( 20 )
-anims/Sleeping = SubResource( 21 )
-anims/Stood = SubResource( 22 )
-anims/Waking = SubResource( 23 )
+anims/Attack = SubResource( 8 )
+anims/CAttack = SubResource( 9 )
+anims/CDash = SubResource( 10 )
+anims/CIdle = SubResource( 11 )
+anims/CJump = SubResource( 12 )
+anims/CMoving = SubResource( 13 )
+anims/Crouch = SubResource( 14 )
+anims/Dash = SubResource( 15 )
+anims/Idle = SubResource( 16 )
+anims/Idle_wj = SubResource( 17 )
+anims/Jump = SubResource( 18 )
+anims/Moving = SubResource( 19 )
+anims/Moving_wj = SubResource( 20 )
+anims/Sleep = SubResource( 21 )
+anims/Sleeping = SubResource( 22 )
+anims/Stood = SubResource( 23 )
+anims/Waking = SubResource( 24 )
 
 [node name="Tween" type="Tween" parent="."]
 
